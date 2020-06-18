@@ -8,6 +8,17 @@
     "lint": "tslint -p .",
     "test": "ava"
   },
+  "ava": {
+    "files": [
+      "src/**/*.spec.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thomas-crane/tbar.git"

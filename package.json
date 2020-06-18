@@ -4,6 +4,8 @@
   "description": "An i3status replacement written in TypeScript.",
   "main": "lib/index.js",
   "scripts": {
+    "compile": "tsc -p .",
+    "lint": "tslint -p .",
     "test": "ava"
   },
   "repository": {

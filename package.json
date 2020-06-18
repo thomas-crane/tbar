@@ -1,0 +1,24 @@
+{
+  "name": "tbar",
+  "version": "0.1.0",
+  "description": "An i3status replacement written in TypeScript.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-crane/tbar.git"
+  },
+  "keywords": [
+    "i3",
+    "i3wm",
+    "status-bar"
+  ],
+  "author": "Thomas Crane <thomasgcrane@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomas-crane/tbar/issues"
+  },
+  "homepage": "https://github.com/thomas-crane/tbar#readme"
+}

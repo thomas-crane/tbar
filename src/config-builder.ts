@@ -49,7 +49,7 @@ export function isBuilder(builder: any): builder is ConfigBuilder {
   return builder instanceof ConfigBuilder;
 }
 
-class ConfigBuilder {
+export class ConfigBuilder {
 
   private barConfig: BarConfig;
 

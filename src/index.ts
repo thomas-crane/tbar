@@ -1,3 +1,3 @@
-export * from './block';
-export * from './color';
-export * from './config-builder';
+export { Block, BlockUpdate } from './block';
+export { Color } from './color';
+export { config } from './config-builder';

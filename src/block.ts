@@ -76,6 +76,11 @@ export abstract class Block extends TypedEmitter<BlockEvents> {
 }
 
 /**
+ * Properties which can have a `Color` enum member as a value.
+ */
+export const colorProperties: (keyof BlockUpdate)[] = ['color', 'background', 'border'];
+
+/**
  * An update which a block can emit to request that the status bar be updated.
  */
 export interface BlockUpdate {

@@ -1,5 +1,6 @@
-import { Block, BlockUpdate } from './block';
+import { Block, BlockUpdate, colorProperties } from './block';
 import { BarConfig } from './config-builder';
+import { Color } from './color';
 
 type NamedBlockUpdate = BlockUpdate & {
   name?: string;
@@ -79,13 +80,23 @@ export class Bar {
    * Handle the emission of a block update.
    */
   private onBlockUpdate(block: Block, update: BlockUpdate): void {
-    // TODO(thomas-crane): check if any of the colours need to be replaced with the theme colour.
     // TODO(thomas-crane): apply defaults.
     const namedUpdate: NamedBlockUpdate = {
       ...update,
       name: block.name,
       instance: block.instance,
     };
+    // check if colours need to be replaced.
+    for (const prop of colorProperties) {
+      if (prop in namedUpdate) {
+        if (namedUpdate[prop]! in Color) {
+          // NB(thomas-crane): we need `as any` here because there is no overlap between all of the properties and so
+          // `namedUpdate[prop]` has type `never`. This is fine here because we know that `prop` will be a property
+          // where this assignment is valid.
+          (namedUpdate[prop] as any) = this.config.theme[namedUpdate[prop] as Color];
+        }
+      }
+    }
     this.mostRecentUpdates.set(block, namedUpdate);
     if (this.running) {
       this.writeUpdates();

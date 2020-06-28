@@ -55,3 +55,21 @@ test(
   { full_text: 'a', color: Color.White },
   { full_text: 'a' },
 );
+
+test(
+  'Default values are applied to block updates.',
+  testBlockEmit,
+  config()
+    .defaults({ separator: true }),
+  { full_text: 'a' },
+  { separator: true, full_text: 'a', },
+);
+
+test(
+  'Default values do not override provided ones.',
+  testBlockEmit,
+  config()
+    .defaults({ separator: true }),
+  { full_text: 'a', separator: false },
+  { separator: false, full_text: 'a', },
+);

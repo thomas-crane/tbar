@@ -80,8 +80,8 @@ export class Bar {
    * Handle the emission of a block update.
    */
   private onBlockUpdate(block: Block, update: BlockUpdate): void {
-    // TODO(thomas-crane): apply defaults.
     const namedUpdate: NamedBlockUpdate = {
+      ...this.config.defaults,
       ...update,
       name: block.name,
       instance: block.instance,

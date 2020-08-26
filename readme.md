@@ -130,3 +130,7 @@ module.exports = tbar.config()
   .theme(tbar.themes.dracula)
   .addBlock(/* ... */);
 ```
+
+## Creating blocks
+
+TODO.

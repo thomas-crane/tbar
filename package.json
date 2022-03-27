@@ -47,7 +47,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "tiny-typed-emitter": "^2.0.2"
   }
 }
